@@ -1,0 +1,57 @@
+html,
+body {
+  height: 100%;
+  font-family: var(--main-font);
+  background-color: #f3f6fc;
+
+  @media screen and (max-width: 320px) {
+    font-size: 18px;
+  }
+
+  &.no-scroll {
+    overflow: hidden;
+  }
+}
+.container {
+  width: 100%;
+  max-width: 1440px;
+  box-sizing: border-box;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+.flex {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.flex-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.icon-button {
+  background-color: transparent;
+  padding: 0;
+  border: none;
+
+  cursor: pointer;
+}
+
+span {
+  cursor: default;
+}
+.danger{
+  color: red;
+  
+}
+.success{
+  color:var(--main-bg-color);
+  
+  background-color: #ffffff;
+  -webkit-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 1);
+-moz-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 1);
+box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 1);
+
+}

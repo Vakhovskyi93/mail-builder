@@ -1,0 +1,16 @@
+<div class="container-fluid">
+  <div class="col invite flex-col blue">
+    <mb-logo [isLarge]="true" class="logo-color"></mb-logo>
+    <h3 class="invite-heading">Welcome to</h3>
+    <h6 class="invite-sub-heading">Mail Builder</h6>
+
+    <span class="invite-produce-lable">Created by Digis.</span>
+    <span class="circle"></span>
+  </div>
+  <div class="col login flex-col">
+    <h3 class="login-heading login-sing-in-headline">Sing in</h3>
+
+    <mb-form (autorizationInfo)="autorizationInfo($event)"></mb-form>
+    <span class="square"></span>
+  </div>
+</div>

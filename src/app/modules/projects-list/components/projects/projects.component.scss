@@ -1,0 +1,46 @@
+.projects-list-body {
+  height: 440px;
+  background-color: white;
+  position: relative;
+  overflow-y: hidden;
+  padding-top: 25px;
+}
+.projectsListView {
+  height: auto;
+}
+mat-card {
+  padding: 23px 24px;
+  border-radius: 0;
+  border-bottom: 1px solid rgba(61, 126, 246, 0.5);
+  box-shadow: none;
+  margin: 0 8px;
+  box-sizing: border-box;
+  height: 109px;
+}
+.mat-card:not([class*="mat-elevation-z"]) {
+  box-shadow: none;
+}
+.mat-card-header-text {
+  margin: 0;
+}
+.mat-card-header .mat-card-title {
+  margin: 0px 0 18px 0;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 21px;
+  font-family: var(--main-font);
+  color: rgba(92, 92, 92, 1);
+
+  .mat-card-title {
+    margin: 0;
+  }
+}
+mat-card-content {
+  margin-bottom: 25px;
+}
+:host::ng-deep app-edit-click {
+  input {
+    position: relative;
+    top: -3px;
+  }
+}

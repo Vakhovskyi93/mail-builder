@@ -1,0 +1,1 @@
+export const BACK_BUTTON_TEXT = 'To Projects';

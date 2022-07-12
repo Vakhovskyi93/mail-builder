@@ -1,0 +1,9 @@
+<div class="wrapper flex-col" mat-dialog-content>
+  <p>Are you sure you want to send it? </p>
+  <div mat-dialog-actions class="flex-row">
+    <mb-action-button class="back-btn" [value]='backToPreview' [mat-dialog-close]></mb-action-button>
+    <mb-action-button class="send-btn" [mat-dialog-close]="true" [value]='send'>
+    </mb-action-button>
+  </div>
+</div>
+<img src="../../../assets/images/bg-horn.svg" alt="">

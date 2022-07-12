@@ -1,0 +1,50 @@
+<mb-header class="header"></mb-header>
+<div class="container flex projects">
+  <div class="projects-list">
+    <div
+      #projectList
+      class="projects-list-body"
+      *ngIf="data"
+      [class.full-list]="projectsListView"
+    >
+    <app-projects
+    *ngFor="let item of data; index as index"
+     [index]='index'
+     [item]="item"
+     [form]='getControl(index, "email")'
+     (emailUpdate)=emailUpdate($event)
+     [class.full-list]="projectsListView"
+     (click)="selectProject(item, index)"
+     [class.focus]="selectionIndex == index"
+     ></app-projects>
+
+     
+    </div>
+    <div class="projects-list-footer">
+      <button class="btn icon" (click)="viewList()">
+        <mat-icon
+          svgIcon="arrow_down"
+          [class.rotate]="projectsListView"
+          class="arrow-down-icon"
+        >
+        </mat-icon>
+      </button>
+    </div>
+
+     
+
+  </div>
+  <app-table
+  *ngIf="data"
+  [removeItemsCounter]='removeItemsCounter'
+  [data]='data'
+  [form]="form"
+  [selectionIndex]="selectionIndex"
+  [dataSource]='dataSource'
+  [selection]='selection'
+  (updateselection)="updateselection($event)"
+  [paginationLength]='paginationLength'
+  ></app-table>
+
+   
+</div>

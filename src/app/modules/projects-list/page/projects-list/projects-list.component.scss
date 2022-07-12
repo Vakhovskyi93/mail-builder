@@ -1,0 +1,244 @@
+.projects {
+  height: 900px;
+  align-items: flex-start;
+  position: relative;
+  z-index: 0;
+  &-list {
+    flex-basis: 292px;
+
+    min-width: 292px;
+    background-color: white;
+  }
+  &-list-body {
+    height: 440px;
+    //max-height: 440px;
+
+    background-color: white;
+    position: relative;
+    overflow-y: hidden;
+    padding-top: 25px;
+  }
+  .projectsListView {
+    height: auto;
+  }
+
+  &-list-footer {
+    background-color: white;
+    width: 100%;
+    height: calc(100% - 550px - 64px);
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 15px 0;
+  }
+
+  &-reports {
+    width: calc(100% - 292px);
+    box-sizing: border-box;
+    padding: 0 0 0 24px;
+    color: rgba(180, 182, 185, 1);
+    overflow-y: scroll;
+  }
+
+  &-header {
+    margin: 25px 0 17px 29px;
+    span {
+      font-size: 16px;
+    }
+  }
+
+  &-count {
+    display: inline-block;
+    font-size: 16px;
+    width: 18px;
+    height: 18px;
+    border: 1px solid rgba(38, 101, 236, 1);
+    border-radius: 7px;
+    background-color: white;
+    text-align: center;
+    color: rgba(38, 101, 236, 1);
+    box-sizing: border-box;
+    margin: 0 3px 0 0;
+    line-height: 17px;
+  }
+  &-btn {
+    background-color: transparent;
+    padding: 0;
+    margin: 0 0 0 50px;
+    border: none;
+    font-size: 16px;
+    color: rgba(180, 182, 185, 1);
+    cursor: pointer;
+  }
+}
+
+.full-list {
+  height: auto;
+  transition: 0.2s;
+}
+
+mat-card {
+  padding: 23px 24px;
+  border-radius: 0;
+  border-bottom: 1px solid rgba(61, 126, 246, 0.5);
+  box-shadow: none;
+  margin: 0 8px;
+}
+.mat-card:not([class*="mat-elevation-z"]) {
+  box-shadow: none;
+}
+
+::ng-deep .focus {
+  .mat-card {
+    background-color: rgba(61, 126, 246, 0.2);
+  }
+}
+
+:host::ng-deep mat-card {
+  .mat-card-header-text {
+    margin: 0;
+  }
+  .mat-card-header .mat-card-title {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 21px;
+    font-family: var(--main-font);
+    color: rgba(92, 92, 92, 1);
+    .mat-card-title {
+      margin: 0;
+    }
+  }
+}
+
+app-table {
+  margin: 0px 0 0 25px;
+  width: calc(100% -292px);
+  overflow-x: scroll;
+}
+
+// // paginator
+// :host::ng-deep mat-paginator {
+//   z-index: 5;
+//   position: relative;
+// }
+// icons
+:host::ng-deep {
+  .rotate svg {
+    transform: rotate(180deg);
+    transition: 0.2s;
+  }
+
+  .flex-row {
+    display: flex;
+  }
+
+  .edit svg {
+    width: 14px;
+    height: 13px;
+  }
+  .edit .mat-icon {
+    height: 15px;
+  }
+  span.edit-email {
+    //border: 1px solid transparent;
+    font-size: 14px;
+    position: relative;
+    left: 4px;
+    height: 20px;
+  }
+  .edit-email {
+    display: inline-block;
+    width: calc(100% - 15px);
+    font-size: 14px;
+    height: 20px;
+  }
+  span .edit-email {
+    position: relative;
+    left: 4px;
+    height: 20px;
+  }
+  .edit-name {
+    display: inline-block;
+    width: 140px;
+    color: var(--main-font-color);
+    font-size: 16px;
+    height: 20px;
+  }
+  input.edit-name {
+    width: 182px;
+  }
+  .invalid {
+    animation: pulse 2s;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+  }
+
+  .wrong {
+    color: rgb(252, 1, 1) !important;
+  }
+
+  .trash-icon svg {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    top: -3px;
+    margin-right: 8px;
+  }
+
+  .counter {
+    padding-top: 2px;
+  }
+
+  .eye-icon svg {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    top: 5px;
+    left: 10px;
+  }
+
+  .eye-icon {
+    margin-left: 10px;
+    position: relative;
+    top: 5px;
+  }
+
+  .icon span {
+    color: var(--main-items-bg-color);
+    font-family: var(--defoult-font);
+    font-size: 18px;
+    line-height: 21px;
+    font-weight: 400;
+  }
+
+  .update-icon {
+    width: 17px;
+    height: 17px;
+    position: relative;
+    top: 2px;
+    margin-left: 10px;
+  }
+
+  .icon {
+    background-color: transparent;
+    padding: 0;
+    border: none;
+    font-size: 16px;
+    color: rgba(180, 182, 185, 1);
+    cursor: pointer !important;
+  }
+
+  .arrow-down-icon {
+    width: 15px;
+    height: 8px;
+    padding: 5px;
+    position: relative;
+    outline: none;
+  }
+
+  .btn-flex {
+    display: flex;
+  }
+}

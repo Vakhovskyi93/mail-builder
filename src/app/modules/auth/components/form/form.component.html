@@ -1,0 +1,16 @@
+<form [formGroup]="form" class="flex-col">
+
+    <mb-input formControlName="email" [placeholder]="emailPlaceholder"
+        [class.invalid]="form.get('email')?.touched && form.get('email')?.hasError('pattern')"></mb-input>
+
+    <mb-input formControlName="password"
+        [class.invalid]="form.get('password')?.touched && form.get('password')?.hasError('required')"
+        [type]='inputTypePass' [placeholder]="passwordPlaceholder"></mb-input>
+
+
+    <mb-action-button (submit)='submit()' [disabled]='form.invalid'></mb-action-button>
+
+
+
+
+</form>

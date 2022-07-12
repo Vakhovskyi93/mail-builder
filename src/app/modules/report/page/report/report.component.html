@@ -1,0 +1,127 @@
+<mb-header></mb-header>
+  <section class="mail-section">
+  <div *ngIf="data  ">
+    <div class="container mail">
+      <div class="mail-contacts">
+
+        <div class="mail-name flex-row">
+          <span class="navigate-link" routerLink="/projects">
+            <mat-icon svgIcon="arrow_down" class="back-icon"></mat-icon> Back to
+            All Projects
+          </span>
+          <span class="customer-name">{{ data.project.client_name ? data.project.client_name:'No Name' }}</span>
+        </div>
+
+        <div class="mail-email flex-row" [class.invalid]='form.invalid'>
+          <span class="mail-lable">Send to</span>
+
+          <div>
+            <app-edit-click (update)="updateField()">
+              <ng-template #viewMode>
+                <div class="email-wrap">
+                  <span class="edit-email">
+                    {{ data.project.client_email
+                    }}</span>
+                  <button class="icon-button edit">
+                    <mat-icon svgIcon="edit"></mat-icon>
+                  </button>
+                </div>
+              </ng-template>
+              <ng-template #editMode>
+                <form [formGroup]="form" class="email-wrap">
+                  <input class="edit-email" formControlName="email" />
+                </form>
+              </ng-template>
+            </app-edit-click>
+          </div>
+
+        </div>
+      </div>
+      <div class="leter-view">
+        <div class="leter-header">
+          <mat-icon svgIcon="letter_logo" class="letter-icon"></mat-icon>
+          <span class="shape round-67"></span>
+          <span class="shape round-171"></span>
+          <span class="shape round-192"></span>
+          <span class="shape round-213"></span>
+        </div>
+        <div class="leter-welcome">
+          <p>
+            Dear {{data.project.client_name?data.project.client_name:'No Name' }},<br />
+            Below are comments on the progress of work on your project services <br />
+            <span style="font-weight: bold;">  for the period from {{data.start_date| date:'LLL dd,yyyy' | uppercase}}    to {{data.end_date| date:'LLL dd,yyyy' | uppercase}}.</span><br />
+            Download an excel file to view all entries. 
+            
+          </p>
+        </div>
+        <div class="leter-body">
+          <div class="report-card" *ngFor="let item of reports  | slice:0:10; index as index">
+            <div class="time">
+              <span class="hours">{{ item.hours }}</span>
+              <span>{{ item.type_name }}</span>
+            </div>
+             
+            <div class="executor">
+              <span class="executor-name">{{ item.username }}</span>
+              <span class="executor-data">{{ item.date }}</span>
+              <span class="executor-notes">{{ item.notes }}</span>
+            </div>
+          </div>
+          <h5 align='center' *ngIf="!reports.length"> отчетов нет!</h5>
+        </div>
+        <div class="leter-report">
+          <h5 class="header">Attached files</h5>
+          <div class="body"> 
+            <a href="{{data.filename}}">TICK from {{data.start_date| date:'LLL dd,yyyy' | uppercase}}    to {{data.end_date| date:'LLL dd,yyyy' | uppercase}}.exl</a>
+             
+          </div>
+        </div>
+         
+        <div class="leter-footer flex-col">
+          <p>Thanks for choosing us. Yours team from <b> Digis.</b></p>
+          <div class="contacts">
+            <span class="social-mail social-icons">
+              <mat-icon svgIcon="mail" class="mail-icon"></mat-icon>
+            </span>
+            <span class="social-fb social-icons">
+              <mat-icon svgIcon="facebook" class="fb-icon"></mat-icon>
+            </span>
+
+            <span class="social-id social-icons">
+              <mat-icon svgIcon="linkedin" class="id-icon"></mat-icon>
+            </span>
+          </div>
+          
+          <span class="round-238"></span>
+          <span class="round-87"></span>
+          <span class="round-28"></span>
+          <span class="sircle-70"></span>
+        </div>
+      </div>
+      <div *ngIf="form.invalid && form.touched" class="flex-row mail-err">
+        <p>Ivalid email</p>
+      </div>
+      <div class="send-imail">
+        <mb-action-button #button (submit)='closeModal()' [disabled]=disabled [value]="sendButtonValue"
+          [icon]='buttonIcon' [disabled]='form.invalid || !reports.length'></mb-action-button>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="errorMessage">
+    <div class="container mail">
+      <div class="  mail-name flex-row">
+        <span class="navigate-link" routerLink="/projects">
+          <mat-icon svgIcon="arrow_down" class="back-icon"></mat-icon> Back to
+          All Projects
+        </span>
+        <span class="customer-name">Error </span>
+      </div>
+
+
+    </div>
+
+  </div>
+
+
+
+</section>

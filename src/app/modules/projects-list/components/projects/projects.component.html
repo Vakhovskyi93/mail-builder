@@ -1,0 +1,20 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>{{ (item?.name ? item?.name:'no project Name')| customSlice:19   }} </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <app-edit-click (update)="updateEmail(index, 'email')">
+      <ng-template #viewMode>
+        <div class="flex-row">
+          <span class="edit-email">{{ item?.client_email ? item?.client_email : 'add an Email' }}</span>
+          <button class="icon-button edit">
+            <mat-icon svgIcon="edit"></mat-icon>
+          </button>
+        </div>
+      </ng-template>
+      <ng-template #editMode>
+        <input class="edit-email" [formControl]="form" />
+      </ng-template>
+    </app-edit-click>
+  </mat-card-content>
+</mat-card>

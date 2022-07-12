@@ -1,0 +1,396 @@
+.mail {
+  width: 1030px;
+  margin: 0 auto;
+  position: relative;
+  &-email {
+    padding: 10px 24px;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    box-shadow: 0px 2px 2px rgba(84, 128, 237, 0.3);
+
+    span {
+      line-height: 22px;
+      flex-grow: 0;
+    }
+    div {
+      flex-grow: 1;
+    }
+  }
+  &-lable {
+    font-family: var(--main-font);
+    font-size: 18px;
+    font-weight: 400;
+    width: 80px;
+    color: var(--main-helping-form-color);
+  }
+}
+
+.leter {
+  &-view {
+    margin-top: 17px;
+
+    background-color: rgba(243, 246, 252, 1);
+  }
+  position: relative;
+
+  &-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    height: 79px;
+    //background-color: var(--main-items-bg-color);
+    background: linear-gradient(89.99deg, #5480ed 0%, #90bcfc 110.4%);
+  }
+  &-welcome {
+    width: 550px;
+    margin: 32px auto;
+    background-color: white;
+    border-radius: 6px;
+    box-sizing: border-box;
+    padding: 20px 21px 12px 21px;
+
+    p {
+      text-align: center;
+      font-family: Lato;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 26px;
+      color: rgba(134, 134, 134, 1);
+    }
+  }
+  &-body {
+    width: 100%;
+    margin: 32px auto;
+    box-sizing: border-box;
+
+    .report-card {
+      padding: 24px;
+      margin-bottom: 40px;
+      background-color: white;
+      border-radius: 5px;
+      display: flex;
+      justify-content: flex-start;
+      box-shadow: 0px 2px 2px rgba(84, 128, 237, 0.3);
+      .time {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 140px;
+        border-right: 1px solid #5480ed;
+        min-height: 87px;
+        font-family: var(--main-font);
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 26px;
+        letter-spacing: 0em;
+        color: var(--main-helping-form-color);
+
+        .hours {
+          font-family: var(--main-font);
+          font-size: 18px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 22px;
+          letter-spacing: 0em;
+        }
+      }
+    }
+  }
+}
+.leter-report {
+  .header {
+    display: block;
+    background-color: rgba(129, 173, 248, 1);
+    color: white;
+    font-family: "Roboto";
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21px;
+    text-align: left;
+    padding: 7px 32px;
+    margin: 0;
+  }
+  .body {
+    padding: 9px 32px 21px 32px;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 40px;
+    .download {
+      margin: 4px 0 4px 0;
+      background: transparent;
+      border: none;
+      color: rgba(160, 160, 160, 1);
+      cursor: pointer;
+      text-decoration: none; 
+      span {
+        font-family: var(--main-font);
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 30px;
+      }
+    }
+  }
+}
+.leter-footer {
+  position: relative;
+  overflow: hidden;
+  height: 194px;
+  background: linear-gradient(89.99deg, #5480ed 0%, #90bcfc 110.4%);
+
+  p {
+    width: 150px;
+    color: white;
+    font-family: var(--main-font);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0em;
+    b {
+      font-weight: 700;
+      font-size: 16px;
+    }
+  }
+}
+.contacts {
+  width: 242px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.social-icons {
+  margin: 22px 0 24px 0;
+  display: block;
+  display: flex;
+  justify-content: center;
+  width: 80px;
+}
+.social-fb {
+  border-left: 1px solid white;
+  border-right: 1px solid white;
+}
+.mail-subscribe {
+  font-family: var(--main-font);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 19px;
+  letter-spacing: 0em;
+  text-align: center;
+  display: block;
+  width: 342px;
+  color: white;
+}
+.executor {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0 24px;
+  box-sizing: border-box;
+  color: var(--main-helping-form-color);
+
+  &-name {
+    line-height: 19px;
+    color: rgba(84, 128, 237, 1);
+    font-size: 16px;
+  
+  }
+  &-data {
+    font-size: 12px;
+    line-height: 14px;
+    text-transform: uppercase;
+    margin: 8px 0;
+  }
+  &-notes {
+    line-height: 26px;
+    max-width: 690px;
+  }
+}
+
+.mail-section {
+  position: relative;
+  * {
+    z-index: 2;
+  }
+}
+.mail-section::before {
+  content: "";
+  position: absolute;
+  width: 710px;
+  height: 914px;
+  background-image: url("../../../../../assets/images/bg-horn.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  top: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.navigate-link {
+  position: absolute;
+  top: 05px;
+  left: 0;
+  font-family: var(--main-font);
+  font-size: 16px;
+  color: rgba(134, 134, 134, 1);
+  font-weight: 500;
+  line-height: 19px;
+  cursor: pointer;
+}
+
+.mail-name {
+  display: flex;
+  margin: 40px 0 24px 0;
+  justify-content: center;
+  color: var(--main-items-bg-color);
+  position: relative;
+}
+.customer-name {
+  font-family: var(--main-font);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 29px;
+  letter-spacing: 0em;
+}
+.leter-report{
+  a{
+    color: var(--main-font);
+    text-decoration: none;
+  }
+}
+:host::ng-deep {
+  .back-icon {
+    position: relative;
+    width: 10px;
+    height: 13px;
+    transform: rotate(90deg);
+    top: 4px;
+  }
+  .letter-icon {
+    margin: 14px 0;
+    width: 120px;
+    height: 52px;
+  }
+
+  app-edit-click {
+    .email-wrap {
+      border: 1px solid rgba(137, 171, 255, 0.31);
+      border-radius: 5px;
+      padding: 0 8px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    .edit-email {
+      color: var(--main-items-bg-color);
+      font-family: var(--main-font);
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 19px;
+      width: 100%;
+    }
+    input {
+      border: none;
+      width: 100%;
+      padding: 2px 0 3px 0;
+      outline: none;
+      color: var(--main-items-bg-color);
+    }
+    .edit svg {
+      width: 14px;
+      height: 14px;
+      position: relative;
+      top: 5px;
+    }
+  }
+  .social-icons svg {
+    position: relative;
+    width: 20px;
+    margin: 0 auto;
+  }
+}
+.send-imail {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-end;
+  margin: 30px 0;
+  padding-bottom: 50px;
+}
+
+/// shapes
+.shape {
+}
+@mixin shape($width, $height, $bg) {
+  border-radius: 50%;
+  position: absolute;
+  display: block;
+  width: $width;
+  height: $height;
+  background-color: $bg;
+}
+.sircle-70 {
+  @include shape(70px, 70px, transparent);
+  border: 5px solid rgba(255, 255, 255, 0.4);
+  box-sizing: border-box;
+  bottom: -50px;
+  left: 178px;
+}
+.round-28 {
+  @include shape(28px, 28px, rgba(255, 255, 255, 0.2));
+  top: -12px;
+  left: 150px;
+}
+.round-67 {
+  @include shape(69px, 69px, rgba(255, 255, 255, 0.2));
+  left: -45px;
+  bottom: -45px;
+}
+.round-87 {
+  @include shape(87px, 87px, rgba(255, 255, 255, 0.2));
+  left: -44px;
+  bottom: -40px;
+}
+.round-171 {
+  @include shape(171px, 171px, rgba(255, 255, 255, 0.2));
+  right: -90px;
+  top: -105px;
+}
+.round-192 {
+  @include shape(192px, 192px, rgba(255, 255, 255, 0.2));
+  right: -100px;
+  top: -105px;
+}
+.round-213 {
+  @include shape(213px, 213px, rgba(255, 255, 255, 0.2));
+  right: -106px;
+  top: -106px;
+}
+.round-238 {
+  @include shape(213px, 213px, rgba(255, 255, 255, 0.2));
+  right: -115px;
+  top: -10px;
+}
+
+.invalid {
+  box-sizing: border-box;
+  border: 1px solid red;
+}
+.mail-err {
+  p {
+    text-align: right;
+    color: red;
+    font-size: 12px;
+    position: relative;
+    top: 25px;
+    right: 5px;
+  }
+}

@@ -1,0 +1,16 @@
+button {
+  color: white;
+  background-color: var(--button-bg);
+  font-size: 18px;
+  font-weight: 400;
+  padding: 10px 55px;
+}
+
+:host::ng-deep mat-icon {
+  svg {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    top: -4px;
+  }
+}

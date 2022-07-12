@@ -1,0 +1,124 @@
+<div class="projects-reports" *ngIf="data">
+  <div class="noReportMessage" *ngIf="!data[selectionIndex].reports.length">
+    Нет отчетов для этого проекта
+  </div>
+
+  <div class="projects-header flex-row" *ngIf="data[selectionIndex].reports.length">
+    <span class="counter"><span class="projects-count">{{ removeItemsCounter }}</span> Selected item</span>
+    <button class="btn projects-btn flex-row" (click)="masterToggle()">Select all</button>
+    <button class="btn projects-btn flex-row" (click)="delete()" [disabled]='!removeList.length'>
+      <mat-icon svgIcon="trash" class="trash-icon"></mat-icon>
+      Delete
+    </button>
+
+
+
+  </div>
+  <div class="projects-content" *ngIf="data[selectionIndex].reports.length">
+    <div class="mat-elevation-z8">
+      <div class="table-wrap">
+        <table mat-table [dataSource]="dataSource">
+          <!-- CHECKBOX COLUMN -->
+          <ng-container matColumnDef="selecte">
+            <th mat-header-cell *matHeaderCellDef></th>
+            <td mat-cell *matCellDef="let row">
+              <mat-checkbox (change)="selectionClick($event, row)" [checked]="selection.isSelected(row)">
+              </mat-checkbox>
+            </td>
+          </ng-container>
+
+          <!-- PROJECT COLUMN -->
+          <ng-container matColumnDef="project_name">
+            <th mat-header-cell *matHeaderCellDef>
+              <span>Project name</span>
+            </th>
+            <td mat-cell *matCellDef="let element">
+              <span> {{ data[selectionIndex].name | customSlice:11 }} </span>
+            </td>
+          </ng-container>
+          <!-- client NAME COLUMN -->
+          <ng-container matColumnDef="client_name">
+            <th mat-header-cell *matHeaderCellDef>
+              <span>Name</span>
+            </th>
+            <td mat-cell *matCellDef="let element">
+
+
+
+              <mat-card>
+
+                <mat-card-content>
+                  <app-edit-click (update)="updateName(selectionIndex, 'client_name')">
+                    <ng-template #viewMode>
+                      <div class="flex-row">
+                        <span class="edit-name">{{ data[selectionIndex].client_name ? data[selectionIndex].client_name :
+                          'add name' }}</span>
+                        <button class="icon-button edit">
+                          <mat-icon svgIcon="edit"></mat-icon>
+                        </button>
+                      </div>
+                    </ng-template>
+                    <ng-template #editMode>
+                      <input class="edit-name" [formControl]="getControl(selectionIndex, 'client_name')" />
+                    </ng-template>
+                  </app-edit-click>
+                </mat-card-content>
+              </mat-card>
+
+
+
+            </td>
+          </ng-container>
+
+          <!-- DATE COLUMN -->
+          <ng-container matColumnDef="start_date">
+            <th mat-header-cell *matHeaderCellDef><span>Date</span></th>
+            <td mat-cell *matCellDef="let element">
+              <span> {{ element.start_date }} - {{ element.end_date }} </span>
+            </td>
+          </ng-container>
+          <!--  -->
+          <ng-container matColumnDef="end_date">
+            <th mat-header-cell *matHeaderCellDef><span></span></th>
+            <td mat-cell *matCellDef="let element"></td>
+          </ng-container>
+
+          <!-- SYMBOL COLUMN -->
+          <ng-container matColumnDef="position">
+            <th mat-header-cell *matHeaderCellDef>
+              <span>Update from TICK</span>
+            </th>
+            <td mat-cell *matCellDef="let element">
+              <span class="icon-btn-wrapper">
+                <button class="btn icon" #updateBtn (click)="updateTickTime(element, updateBtn )">
+                  <span> Update</span>
+                  <mat-icon svgIcon="update" class="update-icon"></mat-icon>
+                </button>
+              </span>
+            </td>
+          </ng-container>
+
+          <!-- PREVIEW COLUMN -->
+          <ng-container matColumnDef="symbol">
+            <th mat-header-cell *matHeaderCellDef><span> Preview</span></th>
+            <td mat-cell *matCellDef="let element">
+              <span class="icon-btn-wrapper">
+                <button class="btn icon" (click)="previwEmail(element)"
+                  [disabled]='form.controls[selectionIndex].invalid'>
+                  <span>Preview</span>
+                  <mat-icon class="eye-icon">visibility</mat-icon>
+                </button>
+              </span>
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+        </table>
+      </div>
+      <mat-paginator [length]="paginationLength" [pageIndex]="pageIndex" hidePageSize [pageSize]="7">
+      </mat-paginator>
+    </div>
+  </div>
+  <div class="projects-pagination" *ngIf="data[selectionIndex].reports.length"></div>
+</div>

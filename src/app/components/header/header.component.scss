@@ -1,0 +1,33 @@
+mb-logo {
+  padding: 0 38px 0 24px;
+}
+header {
+  box-shadow: 0px 2px 2px rgba(84, 128, 237, 0.3);
+  position: relative;
+  z-index: 3;
+}
+
+.page-title {
+  padding: 22px 0;
+  width: 187px;
+  text-align: center;
+  color: white;
+  background-color: var(--main-items-bg-color);
+}
+.users-name {
+  color: var(--main-helping-form-color);
+  margin-left: 25px;
+}
+.name-wrap {
+  margin-left: auto;
+}
+.logout-icon svg {
+  display: block;
+  width: 20px;
+  height: 20px;
+  padding: 0 26px;
+  cursor: pointer;
+}
+.mat-icon {
+  cursor: pointer;
+}

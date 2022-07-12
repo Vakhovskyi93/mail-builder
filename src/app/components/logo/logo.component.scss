@@ -1,0 +1,25 @@
+.logo {
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 43px;
+  height: 51px;
+}
+
+.large-logo {
+  width: 73px;
+  height: 86px;
+}
+
+mat-icon {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+:host::ng-deep {
+  .white path {
+    fill: white;
+  }
+  .blue path {
+    fill: blue;
+  }
+}

@@ -1,0 +1,10 @@
+<header>
+  <div class="container flex">
+    <mb-logo (click)="redirect($event)" [isLarge]="false" [iconColor]="logoColor"></mb-logo>
+    <span class="page-title"> Mail Builder </span>
+    <div class="name-wrap flex">
+      <mat-icon svgIcon="logOut" class="logout-icon" (click)="logout()"></mat-icon>
+      <span class="users-name"> Welcome, {{ name }}</span>
+    </div>
+  </div>
+</header>
